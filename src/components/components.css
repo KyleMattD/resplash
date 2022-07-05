@@ -1,0 +1,70 @@
+.imageRow {
+    margin-bottom: 30px;
+
+}
+
+.imageRow h2 {
+    text-align: center;
+}
+
+.imageRow--listarea {
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.imageRow--list {
+    transition: all ease 0.5s;
+}
+
+.imageRow--item {
+    display: inline-block;
+    width: 150px;
+    cursor: pointer;
+}
+
+.imageRow--item img {
+    width: 100%;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.imageRow--item img:hover {
+    transform: scale(1);
+}
+
+.imageRow--left, .imageRow--right {
+    position: sticky;
+    display: flex;
+    margin-top: 20px;
+    width: 40px;
+    height: 225px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+
+}
+
+.imageRow--left {
+    left: 0;
+}
+
+.imageRow--right {
+    right: 0;
+}
+
+.imageRow:hover .imageRow--left,
+.imageRow:hover .imageRow--right {
+    opacity: 1;
+}
+
+@media (max-width: 1080px) {
+    .imageRow--left,
+    .imageRow--right {
+        opacity: 1;
+    }
+}
