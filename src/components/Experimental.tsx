@@ -6,7 +6,7 @@ import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 
 export const Experimental = () => {
   const [image, setImage] = useState<any>();
-  const [results, setResults] = useState<any[]>([]);
+  const [res, setRes] = useState<any[]>([]);
   const url =
     "https://api.unsplash.com/collections?experimental" +
     image +
@@ -16,7 +16,7 @@ export const Experimental = () => {
   const getExperimental = async () => {
     axios.get(url).then((response) => {
       console.log(response);
-      setResults(response.data.results);
+      setRes(response.data.results);
     });
   };
 
@@ -36,7 +36,7 @@ export const Experimental = () => {
 
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 4);
-    let listW = results.length * 150;
+    let listW = res?.length * 150;
     if (window.innerWidth - listW > x) {
       x = window.innerWidth - listW - 60;
     }
@@ -58,11 +58,11 @@ export const Experimental = () => {
           className="imageRow--list"
           style={{
             marginLeft: scrollX,
-            width: results.length * 150,
+            width: res?.length * 150,
           }}
         >
-          {results.length > 0 &&
-            results.map((image) => (
+          {res?.length > 0 &&
+            res?.map((image) => (
               <div className="imageRow--item">
                 <img src={image.urls.small} key={image.id} alt={image.title} />
               </div>
