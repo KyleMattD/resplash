@@ -31,12 +31,13 @@ import { Textures } from "./components/Textures";
 const { Header, Content, Footer, Sider } = Layout;
 
 const App = () => {
+  // TO toggle the sidebar
   const [collapsed, setCollapsed] = useState(false);
-
   const onCollapse = () => {
     setCollapsed(!collapsed);
   };
 
+  // Main Layout
   return (
     <Router>
       <Layout style={{ minHeight: "100vh" }}>

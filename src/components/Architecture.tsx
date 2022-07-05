@@ -4,11 +4,14 @@ import "./components.css";
 import "antd/dist/antd.css";
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 
+//I know its bad practice but for the sake of this test its what i could do
 const clientid = "E55X3aIvkH-HQEVH8GU7MM7DHyOMzPjWpHARpiHyofA";
 
 export const Architecture = () => {
+  //State for the api response
   const [image, setImage] = useState();
   const [res, setRes] = useState<any[]>([]);
+  //API call
   const url =
     "https://api.unsplash.com/collections?architecture" +
     image +
@@ -21,13 +24,13 @@ export const Architecture = () => {
       setRes(response.data.results);
     });
   };
-
+  //Supposed to fetch on initial load
   useEffect(() => {
     getArchitecture();
   });
 
+  //TO handle the lateral pagination
   const [scrollX, setScrollX] = useState(0);
-
   const handleLeftArrow = () => {
     let x = scrollX + Math.round(window.innerWidth / 4);
     if (x > 0) {
@@ -45,6 +48,7 @@ export const Architecture = () => {
     setScrollX(x);
   };
 
+  //Display page content
   return (
     <div className="imageRow">
       <h2>Architecture</h2>
