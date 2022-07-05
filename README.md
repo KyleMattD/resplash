@@ -30,3 +30,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 I know it is bad practice to have the .env file on a repo, however I don't have enough experience or knowledge of interacting with API's
 
 The project kind of works, I get a response back from the api, but I cant seem to display the information.
+
+If you navigate to the architecture page, and inspect you can see there is a response from the api. 
